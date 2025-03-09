@@ -1,0 +1,4 @@
+app.yaml
+node_modules/
+.gcloudignore
+.vscode

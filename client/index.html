@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Team Select</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts.js" defer></script>
+</head>
+
+<body class="bg-dark p-3 text-light">
+
+  <h1 class="text-center">Team Select</h1>
+
+  <div class="text-center mt-4">
+    <a href="/all-teams" class="btn btn-secondary">View Other Teams</a>
+  </div>
+
+  <h2 id="budget-remaining" class="pt-3">Budget Remaining: £100M</h2>
+
+  <div class="alert alert-warning d-none fixed-top" id="overbudget-alert" role="alert">You are overbudget! Swap some of your players for cheaper ones.</div>
+
+  <div class="p-3">
+
+    <div id="w1">
+      <h3>Women's 1s</h3>
+      <p>Select two players:</p>
+      <select id="w1player1" class="form-select mb-3">
+          <option value="" selected disabled>Select a player</option>
+      </select>
+      <select id="w1player2" class="form-select mb-3">
+        <option value="" selected disabled>Select a player</option>
+    </select>
+    </div>
+
+    <div id="w2" class="pt-3">
+      <h3>Women's 2s</h3>
+      <p>Select two players:</p>
+      <select id="w2player1" class="form-select mb-3">
+          <option value="" selected disabled>Select a player</option>
+      </select>
+      <select id="w2player2" class="form-select mb-3">
+        <option value="" selected disabled>Select a player</option>
+    </select>
+    </div>
+
+    <div id="m1" class="pt-3">
+      <h3>Men's 1s</h3>
+      <p>Select two players:</p>
+      <select id="m1player1" class="form-select mb-3">
+          <option value="" selected disabled>Select a player</option>
+      </select>
+      <select id="m1player2" class="form-select mb-3">
+        <option value="" selected disabled>Select a player</option>
+    </select>
+    </div>
+
+    <div id="m2" class="pt-3">
+      <h3>Men's 2s</h3>
+      <p>Select two players:</p>
+      <select id="m2player1" class="form-select mb-3">
+          <option value="" selected disabled>Select a player</option>
+      </select>
+      <select id="m2player2" class="form-select mb-3">
+        <option value="" selected disabled>Select a player</option>
+    </select>
+    </div>
+
+    <div id="captains" class="pt-3">
+      <h3>Captains</h3>
+      <p>Select a captain for each round:</p>
+      
+      <div class="alert alert-warning" id="choose-player-alert" role="alert">You need to choose all of your players before you can choose a captain.</div>
+      <div class="alert alert-warning d-none" id="overbudget-captain-alert" role="alert">Your team must be within the budget before you can choose a captain.</div>
+
+      <div class="row align-items-center mb-3">
+        <div class="col-auto">
+          <label for="captainRound1" class="col-form-label">Round 1:</label>
+        </div>
+        <div class="col">
+          <select id="captainRound1" class="form-select">
+            <option value="" selected disabled>Select a player</option>
+          </select>
+        </div>
+      </div>
+    
+      <div class="row align-items-center mb-3">
+        <div class="col-auto">
+          <label for="captainRound2" class="col-form-label">Round 2:</label>
+        </div>
+        <div class="col">
+          <select id="captainRound2" class="form-select">
+            <option value="" selected disabled>Select a player</option>
+          </select>
+        </div>
+      </div>
+    
+      <div class="row align-items-center mb-3">
+        <div class="col-auto">
+          <label for="captainRound3" class="col-form-label">Round 3:</label>
+        </div>
+        <div class="col">
+          <select id="captainRound3" class="form-select">
+            <option value="" selected disabled>Select a player</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row align-items-center my-3 py-3">
+      <div class="col-auto">
+        <label for="userName" class="col-form-label">Your Name:</label>
+      </div>
+      <div class="col">
+        <input type="text" id="user-name" class="form-control" placeholder="Enter your name">
+      </div>
+    </div>
+
+    <div class="alert alert-warning d-none" id="complete-selection-alert" role="alert">You need to make all of your selections to submit.</div>
+    <div class="alert alert-warning d-none" id="enter-name-alert" role="alert">Your need to enter your name to submit.</div>
+
+    <input class="btn btn-secondary mt-3" id="submit-button" type="submit" value="Submit">
+
+  </div>
+
+</body>
+
+</html>
