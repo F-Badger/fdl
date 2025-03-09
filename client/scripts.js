@@ -68,7 +68,10 @@ document.addEventListener("DOMContentLoaded", populateSelects)
   
 function selectionMade(selectID) {
   const selectedPlayers = Array.from(document.querySelectorAll('select'))
-  .filter(select => select.value !== "")
+  .filter(select => {
+    const value = parseFloat(select.value);
+    return !isNaN(value)
+  })
   const budgetDisplay = document.getElementById("budget-remaining")
   const overbudgetAlert = document.getElementById("overbudget-alert")
   const choosePlayerAlert = document.getElementById("choose-player-alert")
