@@ -2,4 +2,5 @@ app.yaml
 node_modules/
 .gcloudignore
 .vscode
+.env
 todo.txt

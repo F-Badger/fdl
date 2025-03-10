@@ -9,12 +9,15 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 const createTcpPool = async (config = {}) => {
+    const isWindows = process.platform === 'win32';
     try {
       const dbConfig = {
         user: process.env.DB_USER,
         password: process.env.DB_PASS,
         database: process.env.DB_NAME,
-        socketPath: process.env.INSTANCE_UNIX_SOCKET,
+        ...(isWindows
+            ? { host: process.env.DB_HOST, port: process.env.DB_PORT }
+            : { socketPath: process.env.INSTANCE_UNIX_SOCKET }), 
         ...config,
       }
   
@@ -22,7 +25,6 @@ const createTcpPool = async (config = {}) => {
       return pool
     } catch (error) {
       console.error('Error creating MySQL pool:', error)
-      process.exit(1)
     }
 }
 
